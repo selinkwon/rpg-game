@@ -3,13 +3,22 @@ package rpg_guide;
 import java.util.ArrayList;
 
 public class Player {
-	static int money;
+	private static int money;
+
 	static Guild guild = new Guild();
 	static Inventory inven = new Inventory();
 
-	Player() {
+	public Player() {
 		money = 100000;
 		guild.setGuild();
+	}
+	
+	public static int getMoney() {
+		return money;
+	}
+	
+	public static void setMoney(int money) {
+		Player.money = money;
 	}
 
 	public void guildMenu() {
