@@ -100,7 +100,6 @@ public class FileData {
 		System.out.println(gameData);
 		fout.write(gameData, 0, gameData.length());
 		fout.close();
-
 	}
 
 	void loadData() throws IOException {
@@ -117,7 +116,7 @@ public class FileData {
 			System.out.println(Player.money);
 			String guildSize = br.readLine();
 			int size = Integer.parseInt(guildSize);
-			Player.guild.guildList.clear();
+			Player.guild.getGuildList().clear();
 			System.out.println(size);
 			for (int i = 0; i < size; i++) {
 				String unitData = br.readLine();
@@ -130,7 +129,7 @@ public class FileData {
 				int exp = Integer.parseInt(unitArr[5]);
 				boolean party = Boolean.parseBoolean(unitArr[6]);
 				Unit temp = new Unit(name, level, maxhp, att, def, exp, party);
-				Player.guild.guildList.add(temp);
+				Player.guild.getGuildList().add(temp);
 				// ==================== item =======================
 				String itemData = br.readLine();
 				String itemArr[] = itemData.split("/");
@@ -177,7 +176,7 @@ public class FileData {
 			System.out.println(invenSize);
 			int inSize = Integer.parseInt(invenSize);
 
-			Player.inven.itemList.clear();
+			Player.inven.getItemList().clear();
 			for (int i = 0; i < inSize; i++) {
 				String invenDate = br.readLine();
 				String[] invenArr = invenDate.split("/");
@@ -187,7 +186,7 @@ public class FileData {
 				int itemPrice = Integer.parseInt(invenArr[3]);
 				Item item = new Item();
 				item.setItem(itemKind, itemName, itemPower, itemPrice);
-				Player.inven.itemList.add(item);
+				Player.inven.getItemList().add(item);
 			}
 
 		}

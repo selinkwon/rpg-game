@@ -3,12 +3,12 @@ package rpg_guide;
 import java.util.ArrayList;
 
 public class Shop {
-	public ArrayList<Item> itemList = new ArrayList<>();
+	private ArrayList<Item> itemList = new ArrayList<>();
 
 	public Shop() {
 		Item temp = new Item();
 		temp.setKind(Item.WEAPON);
-		temp.setName("나무검");
+		temp.setName("몽둥이");
 		temp.setPower(3);
 		temp.setPrice(1000);
 		this.itemList.add(temp);

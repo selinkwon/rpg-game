@@ -3,10 +3,10 @@ package rpg_guide;
 import java.util.ArrayList;
 
 public class Player {
-	private static int money;
+	public static int money;
 
-	static Guild guild = new Guild();
-	static Inventory inven = new Inventory();
+	public static Guild guild = new Guild();
+	public static Inventory inven = new Inventory();
 
 	public Player() {
 		money = 100000;
@@ -21,20 +21,20 @@ public class Player {
 		Player.money = money;
 	}
 
-	public void guildMenu() {
+	public static void guildMenu() {
 		guild.guildMenu();
 	}
 
-	public void inventoryMenu() {
+	public static void inventoryMenu() {
 		inven.inventoryMenu();
 	}
 
 	static public ArrayList<Unit> getGuildList() {
-		return guild.guildList;
+		return guild.getGuildList();
 	}
 
 	static public ArrayList<Item> getItemList() {
-		return inven.itemList;
+		return inven.getItemList();
 	}
 
 	static public Unit getGuildUnit(int num) {
@@ -42,10 +42,14 @@ public class Player {
 	}
 
 	static public int getGuildSize() {
-		return guild.guildList.size();
+		return guild.getGuildList().size();
 	}
 
 	static public int getItemSize() {
-		return inven.itemList.size();
+		return inven.getItemList().size();
+	}
+
+	public static void changeJob() {
+		guild.jobMenu();
 	}
 }

@@ -1,0 +1,15 @@
+100000
+6
+파장세린/2/1000/100/10/0/true
+null/null/null
+오크보석/1/80/7/3/0/true
+null/null/null
+깍두기예지/1/50/3/1/0/true
+null/null/null
+딜러도하/1/70/10/2/0/true
+null/null/null
+탱커지은/1/200/4/8/0/false
+null/null/null
+힐러진경/1/1/1/-1/0/false
+null/null/null
+0

@@ -3,7 +3,8 @@ package rpg_guide;
 import java.util.ArrayList;
 
 public class Inventory {
-	ArrayList<Item> itemList = new ArrayList<>();
+	private ArrayList<Item> itemList = new ArrayList<>();
+	
 
 	public void inventoryMenu() {
 		while (true) {
@@ -71,7 +72,9 @@ public class Inventory {
 			System.out.println("[골드 : " + Player.money + "]");
 			System.out.println("판매할 아이템 번호를 입력하세요. (50 % 세금) [0.뒤로가기]");
 			int selSell = MainGame.scan.nextInt();
-			System.out.println(itemList.get(selSell - 1).getName() + "을 판매합니다.");
+			if(selSell==0)break;
+			else {
+				System.out.println(itemList.get(selSell - 1).getName() + "을 판매합니다.");				
 			try {
 				Thread.sleep(1000);
 			} catch (InterruptedException e) {
@@ -80,11 +83,16 @@ public class Inventory {
 			
 			Player.money += itemList.get(selSell - 1).getPrice() / 2;
 			itemList.remove(selSell - 1);
+			}
 		}
 	}
 
 	public void addItem(Item item) {
 		itemList.add(item);
+	}
+
+	public ArrayList<Item> getItemList() {
+		return (ArrayList<Item>) itemList.clone();
 	}
 
 }
